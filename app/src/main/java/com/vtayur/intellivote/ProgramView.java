@@ -11,6 +11,8 @@ import android.widget.TextView;
  */
 public class ProgramView extends FrameLayout {
 
+    private Integer thumbId;
+
     public ProgramView(Context context, Integer mThumbId, int position) {
         super(context);
         LayoutInflater inflater = (LayoutInflater) context
@@ -22,5 +24,10 @@ public class ProgramView extends FrameLayout {
 
         TextView caption = (TextView) findViewById(R.id.image_caption);
         caption.setText("Channel " + position + " - Program " + (position + 1) + "\n" + "(" + "100k votes)");
+        thumbId = mThumbId;
+    }
+
+    public Integer getThumbId() {
+        return thumbId;
     }
 }

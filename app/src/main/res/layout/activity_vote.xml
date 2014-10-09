@@ -49,7 +49,7 @@
             android:text="What is the capital of India ?"
             android:id="@+id/tvVoteQuestion"
             android:paddingTop="5sp"
-            android:layout_gravity="center"/>
+            android:layout_gravity="left"/>
 
         <RadioGroup
             android:layout_width="fill_parent"
@@ -62,28 +62,28 @@
                 android:layout_height="wrap_content"
                 android:text="New Delhi"
                 android:id="@+id/rbOption1"
-                android:layout_gravity="center"/>
+                android:layout_gravity="left"/>
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Mumbai"
                 android:id="@+id/rbOption2"
-                android:layout_gravity="center"/>
+                android:layout_gravity="left"/>
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Kolkata"
                 android:id="@+id/rbOption3"
-                android:layout_gravity="center"/>
+                android:layout_gravity="left"/>
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Chennai"
                 android:id="@+id/rbOption4"
-                android:layout_gravity="center"/>
+                android:layout_gravity="left"/>
         </RadioGroup>
 
         <Button

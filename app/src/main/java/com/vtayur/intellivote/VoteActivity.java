@@ -1,8 +1,10 @@
 package com.vtayur.intellivote;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -27,13 +29,19 @@ public class VoteActivity extends ActionBarActivity {
         TextView tv = (TextView) findViewById(R.id.tvProgramName);
         tv.setText("Channel " + position + " - Program " + (position + 1) + "\n" + "(" + "100k votes)");
 
+        final Activity voteAct = this;
+
         Button btn = (Button) findViewById(R.id.buttonVoteSubmit);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(VoteActivity.this, "Your vote was registered. Thank You!", Toast.LENGTH_SHORT).show();
-                setResult(Activity.RESULT_OK);
+                Intent intent = new Intent(voteAct, PollTrendActivity.class);
+                Log.d("VoteActivity", "Launching Settings Activity");
+                startActivity(intent);
                 finish();
+//                setResult(Activity.RESULT_OK);
+//                finish();
             }
         });
 
@@ -48,13 +56,6 @@ public class VoteActivity extends ActionBarActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
-        }
         return super.onOptionsItemSelected(item);
     }
 }

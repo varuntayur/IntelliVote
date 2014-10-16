@@ -39,7 +39,7 @@ public class EditProfileActivity extends ActionBarActivity {
         String savedUser = settings.getString(Preferences.USER_ID, "");
         String savedPasswd = settings.getString(Preferences.USER_PASSWORD, "");
 
-        Log.d("EditProfile", "User:" + savedUser + " Pw:" + savedPasswd);
+        Log.d("EditProfileActivity", "Restoring User:" + savedUser + " Pw:" + savedPasswd);
 
         if (!savedUser.isEmpty() && !savedPasswd.isEmpty()) {
             TextView tvUser = (TextView) findViewById(R.id.tvEmailAddress);

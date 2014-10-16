@@ -6,8 +6,9 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.CheckedTextView;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import com.vtayur.intellivote.R;
@@ -33,17 +34,24 @@ public class EditSettings extends ActionBarActivity {
             }
         });
 
-        final CheckedTextView ctv = (CheckedTextView) findViewById(R.id.ctvChannels);
-        ctv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (ctv.isChecked())
-                    ctv.setChecked(false);
-                else
-                    ctv.setChecked(true);
+//        final CheckedTextView ctv = (CheckedTextView) findViewById(R.id.ctvChannels);
+//        ctv.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if (ctv.isChecked())
+//                    ctv.setChecked(false);
+//                else
+//                    ctv.setChecked(true);
+//
+//            }
+//        });
 
-            }
-        });
+        final ListView lstChannels = (ListView) findViewById(R.id.listChannels);
+        ArrayAdapter adapter = new ArrayAdapter<String>(this,
+                R.layout.activity_settings_checkedtextview,
+                new String[]{"Channel 1", "Channel 2", "Channel 3", "Channel 4", "Channel 5", "Channel 6", "Channel 7", "Channel 8", "Channel 9", "Channel 11", "Channel 12"});
+        lstChannels.setAdapter(adapter);
+
 
     }
 

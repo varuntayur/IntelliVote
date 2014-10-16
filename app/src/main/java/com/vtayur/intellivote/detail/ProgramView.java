@@ -1,10 +1,12 @@
-package com.vtayur.intellivote;
+package com.vtayur.intellivote.detail;
 
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.vtayur.intellivote.R;
 
 /**
  * Created by vtayur on 10/8/2014.

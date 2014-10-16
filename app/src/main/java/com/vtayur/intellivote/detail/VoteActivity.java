@@ -1,4 +1,4 @@
-package com.vtayur.intellivote;
+package com.vtayur.intellivote.detail;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -12,6 +12,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.vtayur.intellivote.R;
 
 public class VoteActivity extends ActionBarActivity {
 

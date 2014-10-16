@@ -1,9 +1,12 @@
-package com.vtayur.intellivote;
+package com.vtayur.intellivote.home;
 
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+
+import com.vtayur.intellivote.detail.ProgramView;
+import com.vtayur.intellivote.R;
 
 /**
  * Created by vtayur on 10/8/2014.

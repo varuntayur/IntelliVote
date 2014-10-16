@@ -8,7 +8,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".LoginActivity"
+            android:name=".home.LoginActivity"
             android:label="@string/app_name"
             android:windowSoftInputMode="adjustResize|stateVisible" >
             <intent-filter>
@@ -18,11 +18,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".HomeActivity"
+            android:name=".home.HomeActivity"
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name=".VoteActivity"
+            android:name=".detail.VoteActivity"
             android:label="@string/app_name" >
         </activity>
 
@@ -37,7 +37,7 @@
         </activity>
 
         <activity
-            android:name=".PollTrendActivity"
+            android:name=".detail.PollTrendActivity"
             android:label="@string/app_name" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

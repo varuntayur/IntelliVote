@@ -1,4 +1,4 @@
-package com.vtayur.intellivote;
+package com.vtayur.intellivote.detail;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -12,6 +12,7 @@ import android.widget.LinearLayout;
 import com.jjoe64.graphview.BarGraphView;
 import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.GraphViewSeries;
+import com.vtayur.intellivote.R;
 
 /**
  * Created by vtayur on 10/15/2014.

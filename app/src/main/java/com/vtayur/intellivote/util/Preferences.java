@@ -5,7 +5,7 @@ package com.vtayur.intellivote.util;
  */
 public class Preferences {
     public static final String PREFS_NAME = "IntelliVote";
-    public static final String USER_ID = "intelliUser";
-    public static final String USER_PASSWORD = "intelliUser";
+    public static final String USER_ID = "IntelliVoteUserID";
+    public static final String USER_PASSWORD = "IntelliVoteUserPasswd";
 
 }

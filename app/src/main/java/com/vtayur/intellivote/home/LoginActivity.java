@@ -1,4 +1,4 @@
-package com.vtayur.intellivote;
+package com.vtayur.intellivote.home;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -20,6 +20,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.vtayur.intellivote.R;
 import com.vtayur.intellivote.util.Preferences;
 
 
@@ -27,14 +28,6 @@ import com.vtayur.intellivote.util.Preferences;
  * A login screen that offers login via email/password.
  */
 public class LoginActivity extends Activity {
-
-    /**
-     * A dummy authentication store containing known user names and passwords.
-     * TODO: remove after connecting to a real authentication system.
-     */
-    private static final String[] DUMMY_CREDENTIALS = new String[]{
-            "foo@f:hello", "bar@b:world"
-    };
 
     /**
      * Keep track of the login task to ensure we can cancel it if requested.
@@ -214,19 +207,7 @@ public class LoginActivity extends Activity {
                 return false;
             }
 
-            for (String credential : DUMMY_CREDENTIALS) {
-                String[] pieces = credential.split(":");
-                if (pieces[0].equals(mEmail)) {
-                    SharedPreferences settings = getSharedPreferences(Preferences.PREFS_NAME, 0);
-                    SharedPreferences.Editor editor = settings.edit();
-                    editor.putString(Preferences.USER_ID, mEmail);
-                    editor.putString(Preferences.USER_PASSWORD, mPassword);
-                    editor.commit();
-                    Log.d("LoginActivity", "Saving User:" + mEmail + " Pw:" + mPassword);
-                    // Account exists, return true if the password matches.
-                    return pieces[1].equals(mPassword);
-                }
-            }
+            Log.d("LoginActivity", "Attempting to save User:" + mEmail);
 
             SharedPreferences settings = getSharedPreferences(Preferences.PREFS_NAME, 0);
             SharedPreferences.Editor editor = settings.edit();
@@ -234,7 +215,7 @@ public class LoginActivity extends Activity {
             editor.putString(Preferences.USER_PASSWORD, mPassword);
             editor.commit();
 
-            Log.d("LoginActivity", "Saving User:" + mEmail + " Pw:" + mPassword);
+            Log.d("LoginActivity", "Saving User:" + getSharedPreferences(Preferences.PREFS_NAME, 0).getString(Preferences.USER_ID, "") + " Pw:" + getSharedPreferences(Preferences.PREFS_NAME, 0).getString(Preferences.USER_PASSWORD, ""));
 
             // TODO: register the new account here.
             return true;

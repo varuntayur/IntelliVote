@@ -1,4 +1,4 @@
-package com.vtayur.intellivote;
+package com.vtayur.intellivote.home;
 
 import android.content.Context;
 import android.content.Intent;
@@ -11,6 +11,9 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
 
+import com.vtayur.intellivote.detail.ProgramView;
+import com.vtayur.intellivote.R;
+import com.vtayur.intellivote.detail.VoteActivity;
 import com.vtayur.intellivote.menu.EditProfileActivity;
 import com.vtayur.intellivote.menu.EditSettings;
 

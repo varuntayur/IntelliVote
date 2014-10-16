@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             android:layout_width="fill_parent"
-             android:layout_height="fill_parent"
-             android:layout_weight="100" android:orientation="vertical">
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:layout_weight="100"
+              android:orientation="vertical">
 
     <ImageView
         android:layout_width="wrap_content"
@@ -19,7 +20,9 @@
         android:inputType="textPersonName"
         android:text="Name"
         android:ems="10"
-        android:id="@+id/tvUserName"/>
+        android:id="@+id/tvUserName"
+        android:editable="true"
+        />
 
     <EditText
         android:layout_width="wrap_content"
@@ -27,7 +30,21 @@
         android:inputType="textEmailAddress"
         android:hint="@string/prompt_email"
         android:ems="10"
-        android:id="@+id/tvEmailAddress"/>
+        android:id="@+id/tvEmailAddress"
+        android:editable="false"/>
+
+    <EditText
+        android:id="@+id/tvPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/prompt_password"
+        android:imeActionId="@+id/login"
+        android:imeActionLabel="@string/action_sign_in_short"
+        android:inputType="textPassword"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:editable="true"/>
+
 
     <EditText
         android:layout_width="wrap_content"
@@ -35,7 +52,8 @@
         android:inputType="date"
         android:hint="@string/dob"
         android:ems="10"
-        android:id="@+id/tvDob"/>
+        android:id="@+id/tvDob"
+        android:editable="true"/>
 
     <EditText
         android:layout_width="wrap_content"
@@ -43,7 +61,8 @@
         android:inputType="textPostalAddress"
         android:hint="@string/postal_address"
         android:ems="10"
-        android:id="@+id/tvPostalAddress"/>
+        android:id="@+id/tvPostalAddress"
+        android:editable="true"        />
 
 
     <Button

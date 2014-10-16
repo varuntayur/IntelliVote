@@ -5,10 +5,12 @@ import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -17,6 +19,8 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.vtayur.intellivote.util.Preferences;
 
 
 /**
@@ -31,6 +35,7 @@ public class LoginActivity extends Activity {
     private static final String[] DUMMY_CREDENTIALS = new String[]{
             "foo@f:hello", "bar@b:world"
     };
+
     /**
      * Keep track of the login task to ensure we can cancel it if requested.
      */
@@ -72,6 +77,18 @@ public class LoginActivity extends Activity {
 
         mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);
+
+        SharedPreferences settings = getSharedPreferences(Preferences.PREFS_NAME, 0);
+        String savedUser = settings.getString(Preferences.USER_ID, "");
+        String savedPasswd = settings.getString(Preferences.USER_PASSWORD, "");
+
+        Log.d("LoginActivity", "User:" + savedUser + " Pw:" + savedPasswd);
+
+        if (!savedUser.isEmpty() && !savedPasswd.isEmpty()) {
+            Intent intent = new Intent(this, HomeActivity.class);
+            startActivity(intent);
+            finish();
+        }
     }
 
 
@@ -200,10 +217,24 @@ public class LoginActivity extends Activity {
             for (String credential : DUMMY_CREDENTIALS) {
                 String[] pieces = credential.split(":");
                 if (pieces[0].equals(mEmail)) {
+                    SharedPreferences settings = getSharedPreferences(Preferences.PREFS_NAME, 0);
+                    SharedPreferences.Editor editor = settings.edit();
+                    editor.putString(Preferences.USER_ID, mEmail);
+                    editor.putString(Preferences.USER_PASSWORD, mPassword);
+                    editor.commit();
+                    Log.d("LoginActivity", "Saving User:" + mEmail + " Pw:" + mPassword);
                     // Account exists, return true if the password matches.
                     return pieces[1].equals(mPassword);
                 }
             }
+
+            SharedPreferences settings = getSharedPreferences(Preferences.PREFS_NAME, 0);
+            SharedPreferences.Editor editor = settings.edit();
+            editor.putString(Preferences.USER_ID, mEmail);
+            editor.putString(Preferences.USER_PASSWORD, mPassword);
+            editor.commit();
+
+            Log.d("LoginActivity", "Saving User:" + mEmail + " Pw:" + mPassword);
 
             // TODO: register the new account here.
             return true;
